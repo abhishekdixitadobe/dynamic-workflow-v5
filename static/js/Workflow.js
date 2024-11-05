@@ -111,7 +111,20 @@ class Workflow {
         }
       }
       else {
-        add_to_cc_list.push(cc_group[counter].email);
+        let cc_list = "";
+        if((cc_group[counter].email).includes(',')){
+          cc_list = (cc_group[counter].email).split(",");
+          for (let counter = 0; counter < cc_list.length; counter++) {
+            add_to_cc_list.push(cc_list[counter]);
+          }
+        } else if((cc_group[counter].email).includes(';')){
+          cc_list = (cc_group[counter].email).split(";");
+          for (let counter = 0; counter < cc_list.length; counter++) {
+            add_to_cc_list.push(cc_list[counter]);
+          }
+        } else {
+          add_to_cc_list.push(cc_group[counter].email);
+        }
       }
     }
 

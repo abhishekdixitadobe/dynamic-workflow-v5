@@ -123,7 +123,9 @@ class Workflow {
             add_to_cc_list.push(cc_list[counter]);
           }
         } else {
-          add_to_cc_list.push(cc_group[counter].email);
+          if(cc_group[counter].email !== ''){
+            add_to_cc_list.push(cc_group[counter].email);
+          }
         }
       }
     }

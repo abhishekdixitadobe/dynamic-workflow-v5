@@ -431,8 +431,10 @@ class DynamicForm {
         }
       }
 
-      if ('ccsListInfo' in wf_data) {
+      if ('ccsListInfo' in wf_data && this.cc_group[0].email !== "") {
         async_wf_obj.updateCcGroup(wf_data['ccsListInfo'][0], this.cc_group);
+      }else{
+        delete async_wf_obj.carbon_copy_group;
       }
 
       document.getElementById('loader').hidden = false;

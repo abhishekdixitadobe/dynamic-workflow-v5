@@ -478,7 +478,7 @@ class DynamicForm {
         document.getElementById('loader').hidden = true;
         if ('url' in response) {
           alert('Agreement Sent');
-          if (self.settings.disable_index) {
+          if (this.settings.disable_index) {
             window.location.href = window.location.href.split('?')[0];
           } else {
             window.location.reload();

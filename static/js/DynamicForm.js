@@ -481,7 +481,7 @@ class DynamicForm {
           if (this.settings.disable_index) {
             window.location.href = window.location.href.split('?')[0];
           } else {
-            window.location.reload();
+            window.location.href = "/";
           }
         } else {
           async_wf_obj.clearData();
